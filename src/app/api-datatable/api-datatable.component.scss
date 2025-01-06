@@ -1,0 +1,115 @@
+/* Main container to hold both sidebar and content */
+.main-container {
+  display: flex; /* Use Flexbox to align Sidebar and Content */
+  min-height: 100vh; /* Ensure the container takes full viewport height */
+}
+
+/* Sidebar Styles */
+app-sidebar {
+  width: 250px; /* Sidebar width */
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Data Table container Styles */
+.datatable-container {
+  flex: 1; /* Take remaining space after sidebar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px; /* Move content to the right by the width of the sidebar */
+  box-sizing: border-box;
+}
+
+/* Search Input Styling */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Data Table Styling */
+.datatable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensure fixed layout for better control over column widths */
+}
+
+.datatable th,
+.datatable td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  word-wrap: break-word; /* Prevents text from overflowing */
+}
+
+.datatable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.datatable tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light background for even rows */
+}
+
+.datatable tr:hover {
+  background-color: #f1f1f1; /* Light hover effect on rows */
+}
+
+/* Sorting on header click */
+.datatable th:hover {
+  cursor: pointer;
+  background-color: #e0e0e0; /* Light gray when hovering over header */
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Stack sidebar and content vertically */
+  }
+
+  .datatable-container {
+    margin-left: 0; /* No margin for smaller screens */
+  }
+
+  .datatable th, .datatable td {
+    padding: 6px; /* Smaller padding on mobile */
+    font-size: 12px; /* Adjust font size on mobile */
+  }
+
+  .search-input {
+    font-size: 14px; /* Adjust search input font size for mobile */
+  }
+}

@@ -1,0 +1,123 @@
+
+.main-container {
+    display: flex; 
+    min-height: 100vh; 
+  }
+  
+  app-sidebar {
+    width: 250px; 
+    height: 100vh; 
+    background-color: #f4f4f4; 
+    padding: 20px;
+    box-sizing: border-box; 
+  }
+  
+  .employee-listing-container {
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .employee-table {
+    width: 100%;
+    max-width: 100%; 
+    border-collapse: collapse;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .employee-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .delete-button:hover {
+    background-color: darkred;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .pagination-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination-button:hover {
+    background-color: #ddd;
+  }
+  
+ /* Add Button Styling */
+.add-button {
+    padding: 6px 12px; /* Reduce padding for a smaller button */
+    font-size: 14px; /* Smaller font size */
+    background-color: #007bff; /* Bright blue background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+    display: inline-flex; /* Align content inline */
+    align-items: center; /* Vertically center the icon and text */
+    justify-content: center; /* Center the content horizontally */
+    
+    /* Set the button's width to fit the content */
+    width: auto; /* Automatically adjust width based on content */
+    max-width: 150px; /* Optional: Set a max-width if you want to limit the size */
+  }
+  
+  /* Icon styling */
+  .add-button i {
+    margin-right: 6px; /* Space between icon and text */
+    font-size: 16px; /* Reduce the icon size */
+  }
+  
+  /* Hover Effect */
+  .add-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+  }
+  
+  /* Focus Effect */
+  .add-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add a blue focus outline */
+  }
+  

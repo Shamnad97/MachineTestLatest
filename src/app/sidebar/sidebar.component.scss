@@ -1,0 +1,57 @@
+/* Sidebar container */
+.sidebar {
+    width: 250px; /* Width of the sidebar */
+    height: 100vh; /* Full height */
+    background-color: #2c3e50; /* Dark blue color */
+    color: #fff; /* White text color */
+    position: fixed; /* Fixed sidebar */
+    top: 0;
+    left: 0;
+    padding-top: 20px; /* Add padding at the top */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow on the right side */
+    z-index: 1000; /* Ensure the sidebar is on top of other elements */
+  }
+  
+  /* Style the list inside the sidebar */
+  .sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style each list item */
+  .sidebar li {
+    padding: 15px 20px; /* Padding around the text */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  /* Style links inside the list items */
+  .sidebar a {
+    text-decoration: none; /* Remove underline */
+    color: #ecf0f1; /* Light gray text color */
+    font-size: 18px; /* Slightly bigger font size */
+    display: block; /* Make the entire list item clickable */
+    padding: 10px 0; /* Add padding to the left and right */
+  }
+  
+  /* Active link styling */
+  .sidebar a.active {
+    background-color: #2980b9; /* Blue background for active link */
+    color: #fff; /* White text on active link */
+    border-radius: 4px; /* Rounded corners for active link */
+    padding-left: 20px; /* Add a slight left padding when active */
+  }
+  
+  /* Hover effect for links */
+  .sidebar a:hover {
+    background-color: #34495e; /* Slightly lighter dark color on hover */
+    color: #fff; /* Ensure text is white */
+    border-radius: 4px;
+    padding-left: 20px; /* Slight left padding on hover */
+  }
+  
+  /* Optional: Add a bottom border to the sidebar */
+  .sidebar {
+    border-right: 2px solid #34495e;
+  }
+  

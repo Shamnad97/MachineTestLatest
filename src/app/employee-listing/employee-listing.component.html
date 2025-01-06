@@ -1,0 +1,54 @@
+
+<div class="main-container">
+    <app-sidebar></app-sidebar>
+  
+    <div class="employee-listing-container">
+      <h2>Employee Listing</h2>
+  
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search employees"
+        class="search-input"
+      />
+  
+      <button (click)="addEmployee()" class="btn btn-primary add-button">
+        <i class="fa fa-plus"></i> Add Employee 
+      </button> <br>
+    
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th>EMPLOYEE NAME</th>
+            <th>CONTACT NO</th>
+            <th>EMAIL</th>
+            <th>ADDRESS</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of getFilteredEmployees() | slice:(currentPage-1)*employeesPerPage:(currentPage)*employeesPerPage; let i = index">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.contact }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.address }}</td>
+            <td>
+              <button (click)="deleteEmployee(i)" class="delete-button">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="pagination">
+        <button
+          *ngFor="let page of [].constructor(totalPages); let i = index"
+          (click)="goToPage(i + 1)"
+          [ngClass]="{'active': currentPage === (i + 1)}"
+          class="pagination-button"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+</div>
+  

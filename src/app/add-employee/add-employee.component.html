@@ -1,0 +1,81 @@
+<div class="add-employee-container">
+    <h2>Add Employee</h2>
+  
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <!-- Employee Name Field -->
+      <div class="form-group">
+        <label for="employeeName">Employee Name</label>
+        <input
+          type="text"
+          id="employeeName"
+          name="employeeName"
+          [(ngModel)]="employee.name"
+          required
+          #employeeName="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="employeeName.invalid && (employeeName.dirty || employeeName.touched)" class="error-message">
+          <small *ngIf="employeeName.errors?.['required']">Employee Name is required.</small>
+        </div>
+      </div>
+  
+      <!-- Contact No Field -->
+      <div class="form-group">
+        <label for="contact">Contact No</label>
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          [(ngModel)]="employee.contact"
+          required
+          pattern="^\d{10}$" 
+          #contactField="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="contactField.invalid && (contactField.dirty || contactField.touched)" class="error-message">
+          <small *ngIf="contactField.errors?.['required']">Contact Number is required.</small>
+          <small *ngIf="contactField.errors?.['pattern']">Contact Number must be 10 digits.</small>
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="employee.email"
+          required
+          email
+          #emailField="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="error-message">
+          <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+          <small *ngIf="emailField.errors?.['email']">Please enter a valid email.</small>
+        </div>
+      </div>
+  
+      <!-- Address Field -->
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          [(ngModel)]="employee.address"
+          required
+          #addressField="ngModel"
+          class="form-control"
+        />
+        <div *ngIf="addressField.invalid && (addressField.dirty || addressField.touched)" class="error-message">
+          <small *ngIf="addressField.errors?.['required']">Address is required.</small>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+  

@@ -1,0 +1,132 @@
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #e8f5fe;  /* Light blue background for the whole page */
+  color: #333;  /* Dark text for readability */
+}
+
+/* Login Container */
+.login-container {
+  width: 100%;
+  max-width: 350px;  /* Reduced width of the login box */
+  margin: 80px auto;  /* Center the login box with a smaller margin */
+  padding: 30px;  /* Reduced padding inside the box */
+  background-color: #ffffff;  /* White background for the form */
+  border-radius: 12px;  /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  border: 1px solid #e0e0e0;  /* Light grey border */
+  text-align: center;
+}
+
+/* Title Styling */
+h2 {
+  font-size: 24px;  /* Reduced font size for the title */
+  font-weight: 700;
+  margin-bottom: 20px;  /* Smaller margin below the title */
+  color: #4e4e4e;  /* Dark grey color for the title */
+  text-transform: uppercase;
+  letter-spacing: 1px;  /* Reduced letter-spacing */
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Label Styling */
+label {
+  display: block;
+  font-size: 14px;
+  color: #5a5a5a;  /* Slightly lighter grey for labels */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* Input Fields Styling */
+input.form-control {
+  width: 100%;
+  padding: 12px;  /* Reduced padding */
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;  /* Light grey border */
+  margin-bottom: 15px;
+  background-color: #f9f9f9;  /* Light background color */
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus Effects */
+input.form-control:focus {
+  border-color: #4ca1af;  /* Soft blue border on focus */
+  background-color: #ffffff;  /* White background when focused */
+  box-shadow: 0 0 5px rgba(76, 161, 175, 0.3);  /* Soft blue shadow */
+  outline: none;
+}
+
+/* Submit Button Styling */
+button.btn-block {
+  width: 100%;
+  padding: 12px;  /* Slightly reduced padding */
+  font-size: 16px;
+  background-color: #4ca1af;  /* Blue for the button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Button Hover Effects */
+button.btn-block:hover {
+  background-color: #31999e;  /* Darker teal on hover */
+}
+
+button.btn-block:disabled {
+  background-color: #a5d0d3;  /* Lighter blue when disabled */
+  cursor: not-allowed;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #e74c3c;  /* Red color for error messages */
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Login Error Message (Invalid credentials) */
+.login-error {
+  color: #e74c3c;  /* Bright red color for errors */
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  display: none;  /* Hidden by default */
+  text-align: center;
+}
+
+.login-error.show {
+  display: block;  /* Show error when the class is added */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 480px) {
+  .login-container {
+      padding: 25px;
+      margin-top: 50px;
+  }
+
+  h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+  }
+
+  input, button {
+      font-size: 14px;
+      padding: 12px;
+  }
+}
