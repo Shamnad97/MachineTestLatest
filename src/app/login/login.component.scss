@@ -1,78 +1,114 @@
-/* Global Reset */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #e8f5fe;  /* Light blue background for the whole page */
-  color: #333;  /* Dark text for readability */
+
+.whole-box {
+  background-color: #e1dfeb;
+  background-image: url('/assets/login.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  padding-top: 40px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Login Container */
 .login-container {
+  background-image: url('/assets/login.png');
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed; 
+  height: 100vh; 
+  width: 50vw; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  top: 0;
+  right: 0;
+  padding: 20px;
+  border-radius: 12px 0 0 12px; 
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 350px;  /* Reduced width of the login box */
-  margin: 80px auto;  /* Center the login box with a smaller margin */
-  padding: 30px;  /* Reduced padding inside the box */
-  background-color: #ffffff;  /* White background for the form */
-  border-radius: 12px;  /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-  border: 1px solid #e0e0e0;  /* Light grey border */
-  text-align: center;
+  height: 100%;
+  background-image: inherit; 
+  background-size: inherit;
+  background-position: inherit;
+  background-attachment: inherit;
+  filter: blur(50px); 
+  z-index: -1; 
+  border-radius: inherit; 
 }
 
-/* Title Styling */
+.login-box {
+  background-color:rgba(238, 226, 226, 0.2); 
+  padding: 20px;           
+  border-radius: 8px;       
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  max-width: 400px;         
+  margin: 20px auto;        
+  text-align: left;         
+}
+
 h2 {
-  font-size: 24px;  /* Reduced font size for the title */
+  font-size: 24px; 
   font-weight: 700;
-  margin-bottom: 20px;  /* Smaller margin below the title */
-  color: #4e4e4e;  /* Dark grey color for the title */
+  margin-bottom: 20px; 
+  color: #f7efef;  
   text-transform: uppercase;
-  letter-spacing: 1px;  /* Reduced letter-spacing */
+  letter-spacing: 1px;  
 }
 
-/* Form Group */
 .form-group {
   margin-bottom: 20px;
   text-align: left;
 }
 
-/* Label Styling */
 label {
   display: block;
   font-size: 14px;
-  color: #5a5a5a;  /* Slightly lighter grey for labels */
+  color: #5a5a5a;  
   margin-bottom: 8px;
   font-weight: 600;
 }
 
-/* Input Fields Styling */
 input.form-control {
   width: 100%;
-  padding: 12px;  /* Reduced padding */
+  padding: 12px;  
   font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;  /* Light grey border */
+  border-radius: 8px ;
   margin-bottom: 15px;
-  background-color: #f9f9f9;  /* Light background color */
+  background-color: white;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
   transition: all 0.3s ease-in-out;
 }
 
-/* Input Focus Effects */
 input.form-control:focus {
-  border-color: #4ca1af;  /* Soft blue border on focus */
-  background-color: #ffffff;  /* White background when focused */
-  box-shadow: 0 0 5px rgba(76, 161, 175, 0.3);  /* Soft blue shadow */
+  border-color: #4ca1af;  
+  background-color: white; 
+  box-shadow: 0 0 5px rgba(76, 161, 175, 0.3);  
   outline: none;
+  font-style: bold;
 }
 
-/* Submit Button Styling */
 button.btn-block {
   width: 100%;
-  padding: 12px;  /* Slightly reduced padding */
+  padding: 12px;  
   font-size: 16px;
-  background-color: #4ca1af;  /* Blue for the button */
+  background-color: #4ca1af;  
   color: white;
   border: none;
   border-radius: 8px;
@@ -82,38 +118,35 @@ button.btn-block {
   box-sizing: border-box;
 }
 
-/* Button Hover Effects */
 button.btn-block:hover {
-  background-color: #31999e;  /* Darker teal on hover */
+  background-color: #31999e; 
 }
 
 button.btn-block:disabled {
-  background-color: #a5d0d3;  /* Lighter blue when disabled */
+  background-color: #ada5d3;  
   cursor: not-allowed;
 }
 
-/* Error Message Styling */
+
 .error-message {
-  color: #e74c3c;  /* Red color for error messages */
-  font-size: 12px;
+  color: #e74c3c;  
+  font-size: 15px;
   margin-top: 5px;
 }
 
-/* Login Error Message (Invalid credentials) */
 .login-error {
-  color: #e74c3c;  /* Bright red color for errors */
+  color: #e74c3c; 
   margin-top: 15px;
   font-size: 14px;
   font-weight: bold;
-  display: none;  /* Hidden by default */
+  display: none;  
   text-align: center;
 }
 
 .login-error.show {
-  display: block;  /* Show error when the class is added */
+  display: block;  
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 480px) {
   .login-container {
       padding: 25px;
@@ -130,3 +163,34 @@ button.btn-block:disabled {
       padding: 12px;
   }
 }
+
+body, html {
+  height: 100%; /* Ensure the body takes up the full height of the viewport */
+  margin: 0; /* Remove any default margins */
+}
+
+.new-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align content at the bottom */
+  align-items: flex-start; /* Align content to the left */
+  text-align: left; /* Align text to the left */
+  padding: 20px; /* Optional padding for spacing */
+  height: 100%; /* Allow the container to take full height */
+  margin-bottom: 100px; /* Space below the heading */
+  margin-right:550px;
+}
+
+.new-container h2 {
+  font-size: 32px; /* Large and bold heading */
+  font-weight: bold;
+  color: white; /* Medium blue for emphasis */
+}
+
+.new-container p {
+  font-size: 16px; /* Normal font size for paragraphs */
+  line-height: 1.6; /* Better readability */
+  color: white; /* Neutral dark color for the text */
+  margin: 5px 0; /* Consistent spacing between paragraphs */
+}
+

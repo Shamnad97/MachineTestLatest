@@ -13,16 +13,19 @@ export class LoginComponent {
   password: string = '';
   loginError: boolean = false;
 
-  constructor(private router: Router) {}  // Inject Router
+  constructor(private router: Router) {}  
 
   onSubmit() {
-    // Hardcoded credentials check
     if (this.username === 'touchworld' && this.password === 'touchworldTech') {
-      this.loginError = false;  // Hide error if credentials are correct
-      // Redirect to employee listing page
+      this.loginError = false;  
       this.router.navigate(['/employee-listing']);
     } else {
-      this.loginError = true;  // Show error if credentials are incorrect
+      this.loginError = true; 
     }
   }
+  onCreateAccount(event: Event) {
+    event.preventDefault(); 
+    
+  }
+  
 }

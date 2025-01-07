@@ -26,15 +26,12 @@ export class AddEmployeeComponent {
     employees.push(this.employee);
     localStorage.setItem('employees', JSON.stringify(employees));
     
-    // alert('Employee added successfully!');
-    // this.router.navigate(['/employee-listing']);
-    // Using SweetAlert2 for a professional modal
     Swal.fire({
       title: 'Success!',
       text: 'Employee added successfully!',
       icon: 'success',
       confirmButtonText: 'OK',
-      confirmButtonColor: '#4caf50', // optional custom button color
+      confirmButtonColor: '#4caf50', 
     });
 
     this.router.navigate(['/employee-listing']);

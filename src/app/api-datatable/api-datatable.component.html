@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <div class="datatable-container">
   <h2>API Data Table</h2>
-  <!-- Search Field -->
+ 
   <input
     type="text"
     [(ngModel)]="searchQuery"
@@ -10,7 +10,6 @@
     class="search-input"
   />
 
-  <!-- Data Table -->
   <table class="datatable">
     <thead>
       <tr>
@@ -20,31 +19,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ (currentPage - 1) * 10 + (i + 1) }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.date }}</td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Pagination Controls -->
-  <!-- <div class="pagination">
-    <button
-      *ngFor="let page of [].constructor(totalPages); let i = index"
-      (click)="goToPage(i + 1)"
-      [ngClass]="{ active: currentPage === i + 1 }"
-    >
-      {{ i + 1 }}
-    </button>
-  </div> -->
   <div class="pagination-container">
     <div class="entries-info">
-      <span>Showing {{ users.length }} out of {{ totalUsers }} entries</span>
+      <span>Showing {{ getCurrentRange() }} out of {{ totalUsers }} entries</span>
     </div>
     <!-- Pagination Controls -->
     <div class="pagination">
-      <!-- "First" button -->
+     
       <button
         (click)="goToPage(1)"
         [disabled]="currentPage === 1"
@@ -53,7 +42,7 @@
         First
       </button>
 
-      <!-- "Previous" button -->
+    
       <button
         (click)="goToPage(currentPage - 1)"
         [disabled]="currentPage === 1"
@@ -62,7 +51,7 @@
         Previous
       </button>
 
-      <!-- Dynamic Page Buttons -->
+      
       <button
         *ngFor="let page of pageButtons()"
         (click)="goToPage(page)"
@@ -72,7 +61,6 @@
         {{ page }}
       </button>
 
-      <!-- "Next" button -->
       <button
         (click)="goToPage(currentPage + 1)"
         [disabled]="currentPage === totalPages"
@@ -81,7 +69,6 @@
         Next
       </button>
 
-      <!-- "Last" button -->
       <button
         (click)="goToPage(totalPages)"
         [disabled]="currentPage === totalPages"

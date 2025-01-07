@@ -2,7 +2,7 @@
     <h2>Add Employee</h2>
   
     <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
-      <!-- Employee Name Field -->
+   
       <div class="form-group">
         <label for="employeeName">Employee Name</label>
         <input
@@ -19,7 +19,6 @@
         </div>
       </div>
   
-      <!-- Contact No Field -->
       <div class="form-group">
         <label for="contact">Contact No</label>
         <input
@@ -38,7 +37,6 @@
         </div>
       </div>
   
-      <!-- Email Field -->
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -57,7 +55,6 @@
         </div>
       </div>
   
-      <!-- Address Field -->
       <div class="form-group">
         <label for="address">Address</label>
         <input
@@ -74,7 +71,6 @@
         </div>
       </div>
   
-      <!-- Submit Button -->
       <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Submit</button>
     </form>
 </div>

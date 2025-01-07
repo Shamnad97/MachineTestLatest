@@ -1,29 +1,27 @@
-/* Main container to hold both sidebar and content */
+
 .main-container {
-  display: flex; /* Use Flexbox to align Sidebar and Content */
-  min-height: 100vh; /* Ensure the container takes full viewport height */
+  display: flex; 
+  min-height: 100vh; 
 }
 
-/* Sidebar Styles */
+
 app-sidebar {
-  width: 250px; /* Sidebar width */
-  height: 100vh; /* Full viewport height */
+  width: 250px; 
+  height: 100vh;
   background-color: #f4f4f4;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* Data Table container Styles */
 .datatable-container {
-  flex: 1; /* Take remaining space after sidebar */
+  flex: 1; 
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin-left: 250px; /* Move content to the right by the width of the sidebar */
+  margin-left: 250px; 
   box-sizing: border-box;
 }
 
-/* Search Input Styling */
 .search-input {
   width: 100%;
   padding: 10px;
@@ -34,11 +32,10 @@ app-sidebar {
   box-sizing: border-box;
 }
 
-/* Data Table Styling */
 .datatable {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* Ensure fixed layout for better control over column widths */
+  table-layout: fixed; 
 }
 
 .datatable th,
@@ -47,7 +44,7 @@ app-sidebar {
   text-align: left;
   border: 1px solid #ddd;
   font-size: 14px;
-  word-wrap: break-word; /* Prevents text from overflowing */
+  word-wrap: break-word; 
 }
 
 .datatable th {
@@ -56,20 +53,18 @@ app-sidebar {
 }
 
 .datatable tr:nth-child(even) {
-  background-color: #f9f9f9; /* Light background for even rows */
+  background-color: #f9f9f9; 
 }
 
 .datatable tr:hover {
-  background-color: #f1f1f1; /* Light hover effect on rows */
+  background-color: #f1f1f1; 
 }
 
-/* Sorting on header click */
 .datatable th:hover {
   cursor: pointer;
-  background-color: #e0e0e0; /* Light gray when hovering over header */
+  background-color: #e0e0e0; 
 }
 
-/* Pagination Styles */
 .pagination {
   margin-top: 20px;
   text-align: center;
@@ -94,22 +89,21 @@ app-sidebar {
   background-color: #ddd;
 }
 
-/* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .main-container {
-    flex-direction: column; /* Stack sidebar and content vertically */
+    flex-direction: column; 
   }
 
   .datatable-container {
-    margin-left: 0; /* No margin for smaller screens */
+    margin-left: 0; 
   }
 
   .datatable th, .datatable td {
-    padding: 6px; /* Smaller padding on mobile */
-    font-size: 12px; /* Adjust font size on mobile */
+    padding: 6px; 
+    font-size: 12px; 
   }
 
   .search-input {
-    font-size: 14px; /* Adjust search input font size for mobile */
+    font-size: 14px; 
   }
 }

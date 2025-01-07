@@ -50,7 +50,7 @@ export class EmployeeListingComponent implements OnInit {
   ]
   searchQuery: string = '';
   currentPage: number = 1;
-  employeesPerPage: number = 10; 
+  employeesPerPage: number = 15; 
   totalPages: number | undefined; 
   paginatedEmployees: any[] = []; 
 
@@ -108,11 +108,13 @@ export class EmployeeListingComponent implements OnInit {
 
   goToPage(page: number) {
     this.currentPage = page;
+    this.employeesPerPage = 10;  // Set to 10 records per page after pagination click
+    this.totalPages = Math.ceil(this.getFilteredEmployees().length / this.employeesPerPage);  // Recalculate total pages
     this.paginateEmployees();
-  }
+  }  
  
-  deleteEmployee(index: number) {
-  
+  // deleteEmployee(index: number) {
+  deleteEmployee(employee: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: 'Do you want to delete this employee?',
@@ -125,11 +127,13 @@ export class EmployeeListingComponent implements OnInit {
     }).then((result) => {
     
       if (result.isConfirmed) {
-        this.employees.splice(index, 1);
-        localStorage.setItem('employees', JSON.stringify(this.employees));
+        const index = this.employees.findIndex(emp => emp === employee);
+        if (index !== -1) {
+          this.employees.splice(index, 1);
+          localStorage.setItem('employees', JSON.stringify(this.employees));
   
-        this.totalPages = Math.ceil(this.employees.length / this.employeesPerPage);
-        this.paginateEmployees();
+          this.totalPages = Math.ceil(this.employees.length / this.employeesPerPage);
+          this.paginateEmployees();
   
         Swal.fire({
           title: 'Deleted!',
@@ -140,6 +144,7 @@ export class EmployeeListingComponent implements OnInit {
         });
   
         this.router.navigate(['/employee-listing']);
+        }
       }
     });
   }

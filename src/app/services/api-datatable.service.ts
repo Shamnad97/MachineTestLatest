@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class ApiDatatableService {
 
-  // private apiUrl = 'https://testapp.touchworldtechnology.com/interview/test/v1/product/users?count=200000';
   private apiUrl = 'https://testapp.touchworldtechnology.com/interview/test/v1/product/users';
 
   constructor(private http: HttpClient) { }
@@ -20,9 +19,5 @@ export class ApiDatatableService {
     console.log('API URL with params:', this.apiUrl, params.toString());
     return this.http.get<any>(this.apiUrl, { params });
   }
-  // getUsers(count: number, page: number): Observable<any> {
-  //   const url = `${this.apiUrl}?count=${count}&page=${page}`;
-  //   console.log('API URL:', url);  // Log the URL to check if it's constructed properly
-  //   return this.http.get<any>(url);
-  // }
+
 }
